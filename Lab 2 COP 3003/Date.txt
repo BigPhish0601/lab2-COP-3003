@@ -1,0 +1,31 @@
+package Lab2;
+
+import java.util.Scanner;
+
+public class Date {
+	Scanner sc = new Scanner(System.in);
+	// Variable declaration
+	private int month, day, year;
+
+	public Date() {
+		readData();
+	}
+
+	// Prompts user to input requested dates.
+	// Reads the data to assign to instance variables
+	private void readData() {
+		System.out.print("\tmonth: ");
+		this.month = sc.nextInt();
+		System.out.print("\tday: ");
+		this.day = sc.nextInt();
+		System.out.print("\tyear: ");
+		this.year = sc.nextInt();
+	}
+
+	// Method that prints all gathered information +
+	// the values of instance variables
+	public void print() {
+		System.out.println(month + "/" + day + "/" + year);
+	}
+
+}

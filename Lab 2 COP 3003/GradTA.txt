@@ -1,0 +1,53 @@
+package Lab2;
+
+public class GradTA extends GradStudent {
+
+	// Variable declaration
+	private String taCourse;
+	private String taInstructor;
+	private Date hireDate;
+
+	public GradTA() {
+		// Call to super class
+		super();
+		readData();
+	}
+
+	// Prompts user to input TA course, instructor and their Hire date.
+	// Reads the data to assign to instance variables
+	private void readData() {
+		if (gender == 'f' || gender == 'F') {
+			System.out.print("Please input her TA course: ");
+			this.taCourse = sc.nextLine();
+			System.out.print("Please input her TA Instructor: ");
+			this.taInstructor = sc.nextLine();
+			System.out.println("Please input her hire date: ");
+			hireDate = new Date();
+		} else {
+			System.out.print("Please input his TA course: ");
+			this.taCourse = sc.nextLine();
+			System.out.print("Please input his TA Instructor: ");
+			this.taInstructor = sc.nextLine();
+			System.out.println("Please input his hire date: ");
+			hireDate = new Date();
+		}
+	}
+
+	// Method that prints all gathered information +
+	// the values of instance variables
+	public void print() {
+		super.print();
+		if (gender == 'f' || gender == 'F') {
+			System.out.println("Her TA course is " + taCourse + ".");
+			System.out.println("Her TA instructor is " + taInstructor + ".");
+			System.out.print("Her hire date is ");
+			hireDate.print();
+		} else {
+			System.out.println("His TA course is " + taCourse + ".");
+			System.out.println("His TA instructor is " + taInstructor + ".");
+			System.out.print("His hire date is ");
+			hireDate.print();
+		}
+	}
+
+}

@@ -1,0 +1,47 @@
+package Lab2;
+
+import java.util.Scanner;
+
+public class GradStudent extends Student {
+
+	Scanner sc = new Scanner(System.in);
+	// Variable declaration
+	private String researchTopic;
+	private String advisor;
+
+	public GradStudent() {
+		// Call to super class
+		super();
+		readData();
+	}
+
+	// Prompts user to input research topic and advisor.
+	// Reads the data to assign to instance variables
+	private void readData() {
+		if (gender == 'f' || gender == 'F') {
+			System.out.print("\nPlease input her research topic: ");
+			this.researchTopic = sc.nextLine();
+			System.out.print("Please input her advisor: ");
+			this.advisor = sc.nextLine();
+		} else {
+			System.out.print("\nPlease input his research topic: ");
+			this.researchTopic = sc.nextLine();
+			System.out.print("Please input his advisor: ");
+			this.advisor = sc.nextLine();
+		}
+
+	}
+
+	// Method that prints all gathered information +
+	// the values of instance variables
+	public void print() {
+		super.print();
+		if (gender == 'f' || gender == 'F') {
+			System.out.println("Her research topic is " + researchTopic + ".");
+			System.out.println("Her advisor is " + advisor + ".");
+		} else {
+			System.out.println("His research topic is " + researchTopic + ".");
+			System.out.println("His advisor is " + advisor + ".");
+		}
+	}
+}

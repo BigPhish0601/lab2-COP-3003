@@ -1,0 +1,61 @@
+package Lab2;
+
+import java.util.Scanner;
+
+public class Student {
+	Scanner sc = new Scanner(System.in);
+	// Declaration of variables
+	// all are private, with exception of gender
+	private String name;
+	private int ssn; // ssn is used in place of Social Security Number
+	private int numOfCourses;
+	private Date birthDate;
+	protected char gender;
+
+	public Student() {
+		readData();
+	}
+
+	// This method receives input of name, ssn, and gender.
+	// Reads data to assign to instance variables
+	private void readData() {
+		System.out.print("Please input a name: ");
+		name = sc.nextLine();
+		System.out.print("Male/Female? (m/f): ");
+		gender = sc.next().charAt(0);
+		if (gender == 'f' || gender == 'F') {
+			System.out.print("Please input her ssn: ");
+			ssn = sc.nextInt();
+			System.out.print("How many courses she is taking: ");
+			numOfCourses = sc.nextInt();
+			System.out.println("Please input her birth date. ");
+			birthDate = new Date();
+		} else {
+			System.out.print("Please input his ssn: ");
+			ssn = sc.nextInt();
+			System.out.print("How many courses he is taking: ");
+			numOfCourses = sc.nextInt();
+			System.out.println("Please input his birth date. ");
+			birthDate = new Date();
+		}
+
+	}
+
+	// Method that prints all gathered information +
+	// the values of instance variables
+	public void print() {
+		System.out.println("\nThe information gathered for " + name + " is...");
+		if (gender == 'f' || gender == 'F') {
+			System.out.println("Her ssn is " + ssn + ".");
+			System.out.println("She is enrolled in " + numOfCourses + " courses.");
+			System.out.print("Her birthday is on ");
+			birthDate.print();
+		} else {
+			System.out.println("His ssn is " + ssn + ".");
+			System.out.println("He is enrolled in " + numOfCourses + " courses.");
+			System.out.print("His birthday is on ");
+			birthDate.print();
+		}
+	}
+
+}
